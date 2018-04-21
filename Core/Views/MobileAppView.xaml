@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:Core.Controls"
+    x:Class="Core.Views.MobileAppView"
+    Title="{Binding Title}"
+>
+    <ContentPage.Content>
+        <controls:ListView
+            ItemsSource="{Binding Apps}"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell 
+                        Text="{Binding Name}"
+                    />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </controls:ListView>
+    </ContentPage.Content>
+</ContentPage>

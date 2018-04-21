@@ -1,4 +1,8 @@
-﻿using Prism;
+﻿using Core.Interfaces;
+using Core.Services;
+using Core.ViewModels;
+using Core.Views;
+using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Xamarin.Forms;
@@ -14,13 +18,14 @@ namespace Core
 		{
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/CorePage");
+            await NavigationService.NavigateAsync("NavigationPage/MobileAppView");
 		}
 
 		protected override void RegisterTypes(IContainerRegistry containerRegistry)
 		{
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<CorePage>();
+            containerRegistry.RegisterForNavigation<MobileAppView, MobileAppViewModel>();
+            containerRegistry.RegisterSingleton<IMobileApp, MobileAppService>();
 		}
 
 		protected override void OnStart()
