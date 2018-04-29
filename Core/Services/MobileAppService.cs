@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Core.Interfaces;
 using Core.Models;
+using Core.ViewModels;
+using Core.Views;
 
 namespace Core.Services
 {
@@ -12,13 +15,19 @@ namespace Core.Services
         {
             _apps = new List<MobileAppModel>();
 
-            _apps.Add(GetMobileApp("WhatsApp - Lista chats"));
+            _apps.Add(GetMobileApp(
+                typeof(WhatsAppChatListView).Name,
+                "WhatsApp - Lista chats"
+            ));
         }
 
-        private MobileAppModel GetMobileApp(string name)
+        private MobileAppModel GetMobileApp(
+            string viewName,
+            string name)
         {
             return new MobileAppModel()
             {
+                ViewName = viewName,
                 Name = name
             };
         }

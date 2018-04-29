@@ -34,6 +34,34 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\WhatsAppChatListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\WhatsAppChatList\GroupSentMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\WhatsAppChatList\GroupReceivedMessage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\WhatsAppChatList\GroupUnreadReceivedMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\WhatsAppChatList\SingleSentMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\WhatsAppChatList\SingleReceivedMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\WhatsAppChatList\SingleUnreadReceivedMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -52,6 +80,34 @@
     </Compile>
     <Compile Include="Controls\ListView.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="Models\WhatsAppChatListModel.cs" />
+    <Compile Include="Enums\WhatsAppChatListMessageStatusEnum.cs" />
+    <Compile Include="Interfaces\IWhatsApp.cs" />
+    <Compile Include="Services\WhatsAppService.cs" />
+    <Compile Include="ViewModels\WhatsAppChatListViewModel.cs" />
+    <Compile Include="Views\WhatsAppChatListView.xaml.cs">
+      <DependentUpon>WhatsAppChatListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WhatsAppChatListTemplate.cs" />
+    <Compile Include="Templates\WhatsAppChatList\GroupSentMessage.xaml.cs">
+      <DependentUpon>GroupSentMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WhatsAppChatList\GroupReceivedMessage.xaml.cs">
+      <DependentUpon>GroupReceivedMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WhatsAppChatList\GroupUnreadReceivedMessage.xaml.cs">
+      <DependentUpon>GroupUnreadReceivedMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WhatsAppChatList\SingleSentMessage.xaml.cs">
+      <DependentUpon>SingleSentMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WhatsAppChatList\SingleReceivedMessage.xaml.cs">
+      <DependentUpon>SingleReceivedMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WhatsAppChatList\SingleUnreadReceivedMessage.xaml.cs">
+      <DependentUpon>SingleUnreadReceivedMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BooleanInverterConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -78,6 +134,18 @@
     <Reference Include="Prism.DryIoc.Forms">
       <HintPath>..\packages\Prism.DryIoc.Forms.7.0.0.396\lib\netstandard1.0\Prism.DryIoc.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.6\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.6\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.3.6\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.3.6\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -89,6 +157,10 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="Controls\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Templates\" />
+    <Folder Include="Templates\WhatsAppChatList\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading.Forms.Touch;
+using FFImageLoading.Transformations;
 using Foundation;
 using Prism;
 using Prism.Ioc;
@@ -15,7 +16,9 @@ namespace Core.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            CachedImageRenderer.Init();
 
+            var ignore = new CircleTransformation();
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

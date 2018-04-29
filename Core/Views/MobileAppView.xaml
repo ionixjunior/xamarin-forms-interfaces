@@ -9,6 +9,7 @@
     <ContentPage.Content>
         <controls:ListView
             ItemsSource="{Binding Apps}"
+            ItemTappedCommand="{Binding SelectItemCommand}"
         >
             <ListView.ItemTemplate>
                 <DataTemplate>
