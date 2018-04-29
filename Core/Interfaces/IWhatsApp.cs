@@ -7,5 +7,6 @@ namespace Core.Interfaces
     public interface IWhatsApp
     {
         IList<WhatsAppChatListModel> GetChats();
+        WhatsAppInfoModel GetInfo();
     }
 }

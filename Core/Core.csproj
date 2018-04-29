@@ -62,6 +62,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\WhatsAppInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -111,6 +115,13 @@
     <Compile Include="Controls\CircleBox.cs" />
     <Compile Include="Controls\Badge.cs" />
     <Compile Include="Controls\WhatsAppViewCell.cs" />
+    <Compile Include="Views\WhatsAppInfoView.xaml.cs">
+      <DependentUpon>WhatsAppInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\WhatsAppInfoViewModel.cs" />
+    <Compile Include="Controls\AlwaysScrollView.cs" />
+    <Compile Include="Controls\ParallaxScrollView.cs" />
+    <Compile Include="Models\WhatsAppInfoModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

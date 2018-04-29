@@ -9,6 +9,7 @@ namespace Core.Services
     public class WhatsAppService : IWhatsApp
     {
         private IList<WhatsAppChatListModel> _chats;
+        private WhatsAppInfoModel _info;
 
         public WhatsAppService()
         {
@@ -97,6 +98,17 @@ namespace Core.Services
                 isMessageSent: false,
                 messageStatusEnum: WhatsAppChatListMessageStatusEnum.None
             ));
+
+
+            // info
+            _info = new WhatsAppInfoModel()
+            {
+                Phone = "http://profetirando.com.br/wp-content/uploads/2015/10/de-volta-para-o-futuro-profetirando6.jpg",
+                Name = "Marty McFly",
+                Photo = "+1 11 9943-2424",
+                Status = "Available",
+                StatusAt = DateTimeOffset.Now.AddDays(131433)
+            };
         }
 
         private WhatsAppChatListModel GetChat(
@@ -131,6 +143,11 @@ namespace Core.Services
         public IList<WhatsAppChatListModel> GetChats()
         {
             return _chats;
+        }
+
+        public WhatsAppInfoModel GetInfo()
+        {
+            return _info;
         }
     }
 }

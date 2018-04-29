@@ -19,6 +19,11 @@ namespace Core.Services
                 typeof(WhatsAppChatListView).Name,
                 "WhatsApp - Lista chats"
             ));
+
+            _apps.Add(GetMobileApp(
+                typeof(WhatsAppInfoView).Name,
+                "WhatsApp - Info"
+            ));
         }
 
         private MobileAppModel GetMobileApp(
