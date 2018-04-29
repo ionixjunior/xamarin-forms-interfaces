@@ -1,8 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using Core.Controls;
+using Xamarin.Forms;
 
 namespace Core.Templates.WhatsAppChatList
 {
-    public partial class GroupUnreadReceivedMessage : ViewCell
+    public partial class GroupUnreadReceivedMessage : WhatsAppViewCell
     {
         public GroupUnreadReceivedMessage()
         {

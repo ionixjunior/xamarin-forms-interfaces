@@ -110,6 +110,7 @@
     <Compile Include="Converters\BooleanInverterConverter.cs" />
     <Compile Include="Controls\CircleBox.cs" />
     <Compile Include="Controls\Badge.cs" />
+    <Compile Include="Controls\WhatsAppViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

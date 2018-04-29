@@ -1,8 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using Core.Controls;
+using Xamarin.Forms;
 
 namespace Core.Templates.WhatsAppChatList
 {
-    public partial class SingleSentMessage : ViewCell
+    public partial class SingleSentMessage : WhatsAppViewCell
     {
         public SingleSentMessage()
         {

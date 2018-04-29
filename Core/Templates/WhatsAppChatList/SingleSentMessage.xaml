@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ViewCell 
+<controls:WhatsAppViewCell 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:converters="clr-namespace:Core.Converters"
+    xmlns:controls="clr-namespace:Core.Controls"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     x:Class="Core.Templates.WhatsAppChatList.SingleSentMessage"
@@ -77,4 +77,4 @@
             </StackLayout>
         </Grid>
     </ViewCell.View>
-</ViewCell>
+</controls:WhatsAppViewCell>
