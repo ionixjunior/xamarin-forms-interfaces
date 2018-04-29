@@ -108,6 +108,8 @@
       <DependentUpon>SingleUnreadReceivedMessage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BooleanInverterConverter.cs" />
+    <Compile Include="Controls\CircleBox.cs" />
+    <Compile Include="Controls\Badge.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

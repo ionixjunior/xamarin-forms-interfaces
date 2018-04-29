@@ -150,6 +150,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderers\CircleBoxRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\whatsapp_mute.png" />

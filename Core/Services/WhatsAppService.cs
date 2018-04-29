@@ -23,7 +23,7 @@ namespace Core.Services
                 message: "O jogo ficou confirmado para quarta??",
                 isMuted: true,
                 isRead: false,
-                totalUnread: 22,
+                totalUnread: 9,
                 isMessageSent: false,
                 messageStatusEnum: WhatsAppChatListMessageStatusEnum.None
             ));
