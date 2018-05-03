@@ -7,11 +7,18 @@ namespace Core.Views
         public WhatsAppInfoView()
         {
             InitializeComponent();
+            MainScroll.ParallaxView = HeaderView;
         }
 
 		protected override void OnAppearing()
 		{
             base.OnAppearing();
+            MainScroll.Parallax();
+		}
+
+		protected override void OnSizeAllocated(double width, double height)
+		{
+            base.OnSizeAllocated(width, height);
             MainScroll.Parallax();
 		}
 	}
