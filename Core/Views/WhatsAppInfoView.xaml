@@ -11,7 +11,7 @@
         <Grid
         >
             <Grid.RowDefinitions>
-                <RowDefinition Height="200" />
+                <RowDefinition Height="150" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
@@ -36,7 +36,7 @@
                     RowSpacing="0"
                 >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="200" />
+                        <RowDefinition Height="150" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     
@@ -70,6 +70,7 @@
                     <StackLayout
                         Grid.Row="1" 
                         Spacing="0"
+                        BackgroundColor="White"
                     >
                         <StackLayout
                             HeightRequest="180"
@@ -77,14 +78,10 @@
                             VerticalOptions="End"
                             HorizontalOptions="FillAndExpand"
                         >
-                            <Frame>
-                                <StackLayout>
-                                    <Label
-                                        Text="{Binding Info.Name}"
-                                        FontSize="18"
-                                    />
-                                </StackLayout>
-                            </Frame>
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
                         </StackLayout>
 
                         <StackLayout

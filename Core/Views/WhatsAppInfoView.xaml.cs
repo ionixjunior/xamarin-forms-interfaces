@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Core.Views
 {
@@ -14,6 +15,7 @@ namespace Core.Views
 		{
             base.OnAppearing();
             MainScroll.Parallax();
+            //MainScroll.ScrollToAsync(0, 150, false);
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
