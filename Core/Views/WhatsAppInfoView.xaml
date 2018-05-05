@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:Core.Controls"
+    x:Class="Core.Views.WhatsAppInfoView"
+    Title="{Binding Title}"
+    BackgroundColor="White"
+>
+    <ContentPage.Content>
+        <Grid
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid 
+                x:Name="HeaderView"
+                RowSpacing="0" 
+                ColumnSpacing="0" 
+            >
+                <Image
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Source="http://profetirando.com.br/wp-content/uploads/2015/10/de-volta-para-o-futuro-profetirando6.jpg" 
+                    Aspect="AspectFill"
+                />
+            </Grid>
+
+            <controls:ParallaxScrollView 
+                x:Name="MainScroll"
+                Grid.RowSpan="2"
+            >
+                <Grid 
+                    RowSpacing="0"
+                >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    
+                    <Grid 
+                        VerticalOptions="End"
+                        HorizontalOptions="FillAndExpand"
+                    >
+                        <!--
+                        <Image 
+                            Source="profile_pic_shadow.png" 
+                            Aspect="AspectFill"
+                            HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="FillAndExpand"
+                        />
+                        
+                        <StackLayout
+                             Spacing="0"
+                             VerticalOptions="End"
+                             HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="Martyn McFly"
+                                TextColor="White"
+                                FontSize="18"
+                                Margin="15"
+                            />
+                        </StackLayout>
+                        -->
+                    </Grid>
+
+                    <StackLayout
+                        Grid.Row="1" 
+                        Spacing="0"
+                        BackgroundColor="White"
+                    >
+                        <StackLayout
+                            HeightRequest="180"
+                            Spacing="0"
+                            VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="180"
+                            Spacing="0"
+                            VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="180"
+                            Spacing="0"
+                            VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="180"
+                            Spacing="0"
+                            VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="180"
+                            Spacing="0"
+                            VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="180"
+                            Spacing="0"
+                            VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="180"
+                            Spacing="0"
+                            VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="180"
+                            Spacing="0"
+                            VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                        >
+                            <Label
+                                Text="{Binding Info.Name}"
+                                FontSize="18"
+                            />
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </controls:ParallaxScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

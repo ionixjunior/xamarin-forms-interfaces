@@ -152,6 +152,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\CircleBoxRenderer.cs" />
     <Compile Include="Renderers\WhatsAppViewCellRenderer.cs" />
+    <Compile Include="Renderers\AlwaysScrollViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\whatsapp_mute.png" />
