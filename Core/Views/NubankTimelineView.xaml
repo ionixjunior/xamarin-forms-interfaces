@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:Core.Controls"
+    xmlns:converters="clr-namespace:Core.Converters"
+    x:Class="Core.Views.NubankTimelineView"
+>
+    <ContentPage.Content>
+        <controls:ListView
+            ItemsSource="{Binding Items}"
+            HasUnevenRows="true"
+            SeparatorVisibility="None"
+        >
+            <controls:ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid
+                                ColumnSpacing="0"
+                            >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid
+                                    Grid.Column="0"
+                                >
+                                    <BoxView 
+                                        BackgroundColor="#808080"
+                                        WidthRequest="1"
+                                        HorizontalOptions="Center"
+                                    />
+                                    
+                                    <StackLayout>
+                                        <Image 
+                                            Source="{Binding CategoryIcon}"
+                                            HeightRequest="25"
+                                            VerticalOptions="Start"
+                                            BackgroundColor="White"
+                                            Margin="10"
+                                        />
+                                    </StackLayout>
+                                </Grid>
+
+                                <StackLayout
+                                    Grid.Column="1"
+                                    Margin="10"
+                                >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="100" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label 
+                                            Grid.Column="0"
+                                            Text="{Binding Category}"
+                                            TextColor="{Binding TextColor}"
+                                            FontAttributes="Bold"
+                                        />
+
+                                        <Label 
+                                            Grid.Column="1"
+                                            Text="{Binding CreatedAt, Converter={converters:NubankDateTimeConverter}}"
+                                            HorizontalTextAlignment="End"
+                                        />
+                                    </Grid>
+
+                                    <Label 
+                                        Text="{Binding Description}"
+                                        TextColor="{Binding TextColor}"
+                                    />
+
+                                    <Label 
+                                        Text="{Binding LocalPrice, Converter={converters:NubankPriceToLocalConverter}}"
+                                        TextColor="{Binding TextColor}"
+                                    />
+
+                                    <Label 
+                                        IsVisible="{Binding IsDollar}"
+                                        Text="{Binding DollarPrice, Converter={converters:NubankPriceToDollarConverter}}"
+                                        TextColor="{Binding TextColor}"
+                                    />
+
+                                    <Label 
+                                        IsVisible="{Binding IsInstallment}"
+                                        Text="{Binding NumberOfInstallments, StringFormat='em {0}x'}"
+                                        TextColor="{Binding TextColor}"
+                                    />
+
+                                    <Label 
+                                        Text="{Binding Tags, Converter={converters:NubankTagsToStringConverter}}}"
+                                    />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </controls:ListView.ItemTemplate>
+        </controls:ListView>
+    </ContentPage.Content>
+</ContentPage>
