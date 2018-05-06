@@ -27,9 +27,11 @@ namespace Core
             containerRegistry.RegisterForNavigation<MobileAppView, MobileAppViewModel>();
             containerRegistry.RegisterForNavigation<WhatsAppChatListView, WhatsAppChatListViewModel>();
             containerRegistry.RegisterForNavigation<WhatsAppInfoView, WhatsAppInfoViewModel>();
+            containerRegistry.RegisterForNavigation<NubankTimelineView, NubankTimelineViewModel>();
 
             containerRegistry.RegisterSingleton<IMobileApp, MobileAppService>();
             containerRegistry.RegisterSingleton<IWhatsApp, WhatsAppService>();
+            containerRegistry.RegisterSingleton<INubank, NubankService>();
 		}
 
 		protected override void OnStart()

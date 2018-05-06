@@ -24,6 +24,11 @@ namespace Core.Services
                 typeof(WhatsAppInfoView).Name,
                 "WhatsApp - Info"
             ));
+
+            _apps.Add(GetMobileApp(
+                typeof(NubankTimelineView).Name,
+                "Nubank - Timeline"
+            ));
         }
 
         private MobileAppModel GetMobileApp(

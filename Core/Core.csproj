@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\NubankTimelineView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -122,6 +126,17 @@
     <Compile Include="Controls\AlwaysScrollView.cs" />
     <Compile Include="Controls\ParallaxScrollView.cs" />
     <Compile Include="Models\WhatsAppInfoModel.cs" />
+    <Compile Include="Models\NubankTimelineModel.cs" />
+    <Compile Include="ViewModels\NubankTimelineViewModel.cs" />
+    <Compile Include="Views\NubankTimelineView.xaml.cs">
+      <DependentUpon>NubankTimelineView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\INubank.cs" />
+    <Compile Include="Services\NubankService.cs" />
+    <Compile Include="Converters\NubankTagsToStringConverter.cs" />
+    <Compile Include="Converters\NubankPriceToLocalConverter.cs" />
+    <Compile Include="Converters\NubankPriceToDollarConverter.cs" />
+    <Compile Include="Converters\NubankDateTimeConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
