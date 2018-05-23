@@ -70,6 +70,14 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Templates\WhatsAppChatList\GroupMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\WhatsAppChatList\SingleMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -137,6 +145,21 @@
     <Compile Include="Converters\NubankPriceToLocalConverter.cs" />
     <Compile Include="Converters\NubankPriceToDollarConverter.cs" />
     <Compile Include="Converters\NubankDateTimeConverter.cs" />
+    <Compile Include="Models\WhatsAppMessageModel.cs" />
+    <Compile Include="Models\WhatsAppSingleSentMessageModel.cs" />
+    <Compile Include="Models\WhatsAppSingleReceivedMessageModel.cs" />
+    <Compile Include="Models\WhatsAppGroupSentMessageModel.cs" />
+    <Compile Include="Models\WhatsAppGroupReceivedMessageModel.cs" />
+    <Compile Include="Models\WhatsAppGroupMessageModel.cs" />
+    <Compile Include="Models\WhatsAppReceivedMessageModel.cs" />
+    <Compile Include="Models\WhatsApp\ChatModel.cs" />
+    <Compile Include="Models\WhatsApp\GroupChatModel.cs" />
+    <Compile Include="Templates\WhatsAppChatList\GroupMessage.xaml.cs">
+      <DependentUpon>GroupMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WhatsAppChatList\SingleMessage.xaml.cs">
+      <DependentUpon>SingleMessage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -190,6 +213,7 @@
     <Folder Include="Templates\" />
     <Folder Include="Templates\WhatsAppChatList\" />
     <Folder Include="Converters\" />
+    <Folder Include="Models\WhatsApp\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

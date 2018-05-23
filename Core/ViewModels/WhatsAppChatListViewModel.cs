@@ -1,20 +1,20 @@
 ﻿using System.Collections.ObjectModel;
 using Core.Interfaces;
 using Core.Models;
+using Core.Models.WhatsApp;
 
 namespace Core.ViewModels
 {
     public class WhatsAppChatListViewModel : BaseViewModel
     {
-        public ObservableCollection<WhatsAppChatListModel> Chats { get; set; }
+        public ObservableCollection<ChatModel> Chats { get; set; }
 
         public WhatsAppChatListViewModel(IWhatsApp whatsApp)
         {
             Title = "Chats";
 
-            Chats = new ObservableCollection<WhatsAppChatListModel>(
-                whatsApp.GetChats()
-            );
+            var chats = whatsApp.GetChats();
+            Chats = new ObservableCollection<ChatModel>(chats);
         }
     }
 }
