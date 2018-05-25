@@ -49,7 +49,7 @@
 
                     <Label 
                         Grid.Column="1"
-                        Text="{Binding CreatedAt, StringFormat='{0:d}'}"
+                        Text="{Binding CreatedAtText}"
                         TextColor="Gray"
                     />
                 </Grid>
