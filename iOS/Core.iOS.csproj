@@ -138,6 +138,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -153,6 +154,7 @@
     <Compile Include="Renderers\CircleBoxRenderer.cs" />
     <Compile Include="Renderers\WhatsAppViewCellRenderer.cs" />
     <Compile Include="Renderers\AlwaysScrollViewRenderer.cs" />
+    <Compile Include="Effects\TwoLinesLabelEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\whatsapp_mute.png" />

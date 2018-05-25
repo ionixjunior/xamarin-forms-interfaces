@@ -38,7 +38,7 @@ namespace Core.Services
             ));
 
             _chats.Add(GetChat(
-                photo: "http://frostsnow.com/assets/thumbnails/1a/1a6bec3fe740466740d7836a3915284b.jpg",
+                photo: "http://www.georgefiorini.eu/images/ritorno-al-futuro/doc-brown.jpg",
                 groupName: null,
                 sentFrom: "Dr. Emmett Brown",
                 createdAt: DateTimeOffset.Now.AddDays(-2),
@@ -65,7 +65,7 @@ namespace Core.Services
                 sentFrom: "Will",
                 createdAt: DateTimeOffset.Now.AddDays(-4),
                 message: "Cara, to precisando passar uns dias ai em bell-air",
-                messageIcon: string.Empty,
+                messageIcon: "whatsapp_read",
                 isMuted: false,
                 totalUnread: 0
             ));
@@ -75,7 +75,7 @@ namespace Core.Services
                 groupName: null,
                 sentFrom: "Rochelle",
                 createdAt: DateTimeOffset.Now.AddDays(-5),
-                message: "Eu não preciso disso, meu marido tem 2 empregos",
+                message: "Eu não preciso disso, meu marido tem 2 empregos, EU ME DEMIIIITOO",
                 messageIcon: string.Empty,
                 isMuted: false,
                 totalUnread: 0

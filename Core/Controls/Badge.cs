@@ -120,6 +120,10 @@ namespace Core.Controls
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             var text = value as string;
+
+            if (text == "0")
+                return false;
+            
             return !String.IsNullOrEmpty(text);
         }
 

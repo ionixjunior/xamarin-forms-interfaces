@@ -3,12 +3,106 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:controls="clr-namespace:Core.Controls"
-    xmlns:converters="clr-namespace:Core.Converters"
+    xmlns:effects="clr-namespace:Core.Effects"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     x:Class="Core.Templates.WhatsAppChatList.SingleMessage"
 >
     <ViewCell.View>
-        <Label Text="Single message" />
+        <Grid
+            ColumnSpacing="10"
+            Margin="10"
+        >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ffimageloading:CachedImage 
+                Grid.Column="0"
+                WidthRequest="60"
+                HeightRequest="60"
+                DownsampleToViewSize="true"
+                Source="{Binding Photo}"
+            >
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation />
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+
+            <StackLayout
+                Grid.Column="1"
+                Spacing="0"
+            >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label 
+                        Grid.Column="0"
+                        Text="{Binding SentFrom}"
+                        FontAttributes="Bold"
+                        LineBreakMode="TailTruncation"
+                    />
+
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding CreatedAt, StringFormat='{0:d}'}"
+                        TextColor="Gray"
+                    />
+                </Grid>
+
+
+                
+                <Grid
+                    VerticalOptions="FillAndExpand"
+                >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout
+                        Grid.Column="0"
+                        Orientation="Horizontal"
+                        Spacing="0"
+                    >
+                        <Image 
+                            Source="{Binding MessageIcon}"
+                            HeightRequest="18"
+                        />
+                        
+                        <Label 
+                            Text="{Binding Message}"
+                            TextColor="Gray"
+                            VerticalOptions="CenterAndExpand"
+                        >
+                            <Label.Effects>
+                                <effects:TwoLinesLabelEffect />
+                            </Label.Effects>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout
+                        Grid.Column="1"
+                        Orientation="Horizontal"
+                        VerticalOptions="Center"
+                    >
+                        <Image 
+                            IsVisible="{Binding IsMuted}"
+                            Source="whatsapp_mute.png"
+                            HeightRequest="20"
+                        />
+
+                        <controls:Badge 
+                            BoxColor="#2768ff"
+                            Text="{Binding TotalUnread}"
+                        />
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
     </ViewCell.View>
 </ViewCell>

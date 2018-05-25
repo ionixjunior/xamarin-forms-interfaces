@@ -38,30 +38,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Templates\WhatsAppChatList\GroupSentMessage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templates\WhatsAppChatList\GroupReceivedMessage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templates\WhatsAppChatList\GroupUnreadReceivedMessage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templates\WhatsAppChatList\SingleSentMessage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templates\WhatsAppChatList\SingleReceivedMessage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templates\WhatsAppChatList\SingleUnreadReceivedMessage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\WhatsAppInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -96,7 +72,6 @@
     </Compile>
     <Compile Include="Controls\ListView.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="Models\WhatsAppChatListModel.cs" />
     <Compile Include="Enums\WhatsAppChatListMessageStatusEnum.cs" />
     <Compile Include="Interfaces\IWhatsApp.cs" />
     <Compile Include="Services\WhatsAppService.cs" />
@@ -105,24 +80,6 @@
       <DependentUpon>WhatsAppChatListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Templates\WhatsAppChatListTemplate.cs" />
-    <Compile Include="Templates\WhatsAppChatList\GroupSentMessage.xaml.cs">
-      <DependentUpon>GroupSentMessage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\WhatsAppChatList\GroupReceivedMessage.xaml.cs">
-      <DependentUpon>GroupReceivedMessage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\WhatsAppChatList\GroupUnreadReceivedMessage.xaml.cs">
-      <DependentUpon>GroupUnreadReceivedMessage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\WhatsAppChatList\SingleSentMessage.xaml.cs">
-      <DependentUpon>SingleSentMessage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\WhatsAppChatList\SingleReceivedMessage.xaml.cs">
-      <DependentUpon>SingleReceivedMessage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\WhatsAppChatList\SingleUnreadReceivedMessage.xaml.cs">
-      <DependentUpon>SingleUnreadReceivedMessage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\BooleanInverterConverter.cs" />
     <Compile Include="Controls\CircleBox.cs" />
     <Compile Include="Controls\Badge.cs" />
@@ -145,13 +102,6 @@
     <Compile Include="Converters\NubankPriceToLocalConverter.cs" />
     <Compile Include="Converters\NubankPriceToDollarConverter.cs" />
     <Compile Include="Converters\NubankDateTimeConverter.cs" />
-    <Compile Include="Models\WhatsAppMessageModel.cs" />
-    <Compile Include="Models\WhatsAppSingleSentMessageModel.cs" />
-    <Compile Include="Models\WhatsAppSingleReceivedMessageModel.cs" />
-    <Compile Include="Models\WhatsAppGroupSentMessageModel.cs" />
-    <Compile Include="Models\WhatsAppGroupReceivedMessageModel.cs" />
-    <Compile Include="Models\WhatsAppGroupMessageModel.cs" />
-    <Compile Include="Models\WhatsAppReceivedMessageModel.cs" />
     <Compile Include="Models\WhatsApp\ChatModel.cs" />
     <Compile Include="Models\WhatsApp\GroupChatModel.cs" />
     <Compile Include="Templates\WhatsAppChatList\GroupMessage.xaml.cs">
@@ -160,6 +110,7 @@
     <Compile Include="Templates\WhatsAppChatList\SingleMessage.xaml.cs">
       <DependentUpon>SingleMessage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Effects\TwoLinesLabelEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -214,6 +165,7 @@
     <Folder Include="Templates\WhatsAppChatList\" />
     <Folder Include="Converters\" />
     <Folder Include="Models\WhatsApp\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
