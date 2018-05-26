@@ -54,6 +54,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetflixHomeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -113,6 +117,15 @@
     <Compile Include="Effects\TwoLinesLabelEffect.cs" />
     <Compile Include="Models\Netflix\MovieModel.cs" />
     <Compile Include="Externsions\DateTimeOffsetExtension.cs" />
+    <Compile Include="Interfaces\INetflix.cs" />
+    <Compile Include="Services\NetflixService.cs" />
+    <Compile Include="Views\NetflixHomeView.xaml.cs">
+      <DependentUpon>NetflixHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\NetflixHomeViewModel.cs" />
+    <Compile Include="Externsions\MovieExtension.cs" />
+    <Compile Include="Controls\HorizontalViewNative.cs" />
+    <Compile Include="Controls\HVScrollGridView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

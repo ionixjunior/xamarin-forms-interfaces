@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:Core.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="Core.Views.NetflixHomeView"
+    Title="{Binding Title}"
+>
+    <!--
+    IsGroupingEnabled="true"
+            GroupDisplayBinding="{Binding GroupName}"
+            HasUnevenRows="true"
+            CachingStrategy="RecycleElement"
+    -->
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+        >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+
+            <controls:HorizontalViewNative 
+                ItemsSource="{Binding Movies}"
+                VerticalOptions="Start"
+                ItemWidth="100"
+                ItemHeight="100"
+            >
+                <controls:HorizontalViewNative.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView>
+                                <StackLayout
+                                    WidthRequest="100"
+                                    HeightRequest="100"
+                                >
+                                    <ffimageloading:CachedImage 
+                                        WidthRequest="100"
+                                        HeightRequest="100"
+                                        DownsampleToViewSize="true"
+                                        Source="{Binding Photo}"
+                                    />
+
+                                </StackLayout>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </controls:HorizontalViewNative.ItemTemplate>
+            </controls:HorizontalViewNative>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

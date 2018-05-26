@@ -155,6 +155,7 @@
     <Compile Include="Renderers\WhatsAppViewCellRenderer.cs" />
     <Compile Include="Renderers\AlwaysScrollViewRenderer.cs" />
     <Compile Include="Effects\TwoLinesLabelEffect.cs" />
+    <Compile Include="Renderers\iOSHorizontalViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\whatsapp_mute.png" />

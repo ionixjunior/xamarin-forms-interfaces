@@ -29,6 +29,11 @@ namespace Core.Services
                 typeof(NubankTimelineView).Name,
                 "Nubank - Timeline"
             ));
+
+            _apps.Add(GetMobileApp(
+                typeof(NetflixHomeView).Name,
+                "Netflix - Home"
+            ));
         }
 
         private MobileAppModel GetMobileApp(
