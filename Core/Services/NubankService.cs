@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using Core.Interfaces;
 using Core.Models;
+using Core.Models.Nubank;
 
 namespace Core.Services
 {
     public class NubankService : INubank
     {
         private IList<NubankTimelineModel> _items;
+        private IList<NubankHeaderModel> _headers;
 
         public NubankService()
         {
             _items = new List<NubankTimelineModel>();
+            _headers = new List<NubankHeaderModel>();
 
             _items.Add(GetNubankTimelineModel(
                 category: "Eletrônicos",
@@ -237,6 +240,19 @@ namespace Core.Services
                 isReversed: false,
                 tags: new List<string>()
             ));
+
+            _headers.Add(GetHeader(
+                description: "Você fez 51 compras nos últimos 30 dias, com um total de R$ 2.173,77"
+            ));
+
+            _headers.Add(GetHeader(
+                total: 2549.91
+            ));
+        }
+
+        public IList<NubankHeaderModel> GetHeader()
+        {
+            return _headers;
         }
 
         public IList<NubankTimelineModel> GetTimeline()
@@ -272,6 +288,24 @@ namespace Core.Services
                 CreatedAt = createdAt,
                 IsReversed = isReversed,
                 Tags = tags
+            };
+        }
+
+        private NubankHeaderModel GetHeader(
+            string description)
+        {
+            return new NubankHeaderSummaryModel()
+            {
+                Description = description
+            };
+        }
+
+        private NubankHeaderModel GetHeader(
+            double total)
+        {
+            return new NubankHeaderInvoiceModel()
+            {
+                Total = total
             };
         }
     }

@@ -4,6 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:controls="clr-namespace:Core.Controls"
     xmlns:converters="clr-namespace:Core.Converters"
+    xmlns:templates="clr-namespace:Core.Templates"
+    xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
     x:Class="Core.Views.NubankTimelineView"
 >
     <ContentPage.Content>
@@ -12,12 +14,21 @@
             HasUnevenRows="true"
             SeparatorVisibility="None"
         >
+            <controls:ListView.Header>
+                <cv:CarouselView
+                    ItemsSource="{Binding Headers}"
+                    HeightRequest="200"
+                    ItemTemplate="{templates:NubankHeaderTemplate}"
+                />
+            </controls:ListView.Header>
+            
             <controls:ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
                             <Grid
                                 ColumnSpacing="0"
+                                BackgroundColor="#f7f7f7"
                             >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="60" />

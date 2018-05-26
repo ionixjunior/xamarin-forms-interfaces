@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using FFImageLoading.Forms.Touch;
 using FFImageLoading.Transformations;
 using Foundation;
@@ -17,6 +18,8 @@ namespace Core.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             CachedImageRenderer.Init();
+            var cv = typeof(Xamarin.Forms.CarouselView);
+            var assembly = Assembly.Load(cv.FullName);
 
             var ignore = new CircleTransformation();
             LoadApplication(new App(new iOSInitializer()));

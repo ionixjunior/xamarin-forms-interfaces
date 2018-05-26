@@ -124,6 +124,9 @@
     <Reference Include="FFImageLoading.Transformations">
       <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

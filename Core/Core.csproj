@@ -58,6 +58,14 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Nubank\HeaderSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Nubank\HeaderInvoice.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -126,6 +134,16 @@
     <Compile Include="Externsions\MovieExtension.cs" />
     <Compile Include="Controls\HorizontalViewNative.cs" />
     <Compile Include="Controls\HVScrollGridView.cs" />
+    <Compile Include="Models\Nubank\NubankHeaderModel.cs" />
+    <Compile Include="Models\Nubank\NubankHeaderSummaryModel.cs" />
+    <Compile Include="Models\Nubank\NubankHeaderInvoiceModel.cs" />
+    <Compile Include="Templates\NubankHeaderTemplate.cs" />
+    <Compile Include="Templates\Nubank\HeaderSummary.xaml.cs">
+      <DependentUpon>HeaderSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Nubank\HeaderInvoice.xaml.cs">
+      <DependentUpon>HeaderInvoice.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -164,6 +182,9 @@
     <Reference Include="FFImageLoading.Transformations">
       <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.3.6\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -183,6 +204,8 @@
     <Folder Include="Effects\" />
     <Folder Include="Models\Netflix\" />
     <Folder Include="Externsions\" />
+    <Folder Include="Models\Nubank\" />
+    <Folder Include="Templates\Nubank\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
