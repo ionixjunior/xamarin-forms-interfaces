@@ -22,6 +22,7 @@
                     TextColor="#00c0cd"
                     HorizontalTextAlignment="Center"
                     FontSize="26"
+                    FontFamily="{StaticResource NubankFontNormal}"
                 />
 
                 <Label 
@@ -29,6 +30,7 @@
                     TextColor="#d5d5d5"
                     HorizontalTextAlignment="Center"
                     FontSize="12"
+                    FontFamily="{StaticResource NubankFontNormal}"
                 />
 
                 <Button
@@ -36,6 +38,7 @@
                     TextColor="Black"
                     BorderColor="#d5d5d5"
                     BorderWidth="1"
+                    FontFamily="{StaticResource NubankFontNormal}"
                 />
             </StackLayout>
 

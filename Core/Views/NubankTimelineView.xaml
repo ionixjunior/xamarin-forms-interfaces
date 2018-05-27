@@ -69,40 +69,47 @@
                                             Grid.Column="0"
                                             Text="{Binding Category}"
                                             TextColor="{Binding TextColor}"
-                                            FontAttributes="Bold"
+                                            FontFamily="{StaticResource NubankFontBold}"
                                         />
 
                                         <Label 
                                             Grid.Column="1"
                                             Text="{Binding CreatedAt, Converter={converters:NubankDateTimeConverter}}"
                                             HorizontalTextAlignment="End"
+                                            FontSize="14"
+                                            FontFamily="{StaticResource NubankFontNormal}"
                                         />
                                     </Grid>
 
                                     <Label 
                                         Text="{Binding Description}"
                                         TextColor="{Binding TextColor}"
+                                        FontFamily="{StaticResource NubankFontNormal}"
                                     />
 
                                     <Label 
                                         Text="{Binding LocalPrice, Converter={converters:NubankPriceToLocalConverter}}"
                                         TextColor="{Binding TextColor}"
+                                        FontFamily="{StaticResource NubankFontNormal}"
                                     />
 
                                     <Label 
                                         IsVisible="{Binding IsDollar}"
                                         Text="{Binding DollarPrice, Converter={converters:NubankPriceToDollarConverter}}"
                                         TextColor="{Binding TextColor}"
+                                        FontFamily="{StaticResource NubankFontNormal}"
                                     />
 
                                     <Label 
                                         IsVisible="{Binding IsInstallment}"
                                         Text="{Binding NumberOfInstallments, StringFormat='em {0}x'}"
                                         TextColor="{Binding TextColor}"
+                                        FontFamily="{StaticResource NubankFontNormal}"
                                     />
 
                                     <Label 
                                         Text="{Binding Tags, Converter={converters:NubankTagsToStringConverter}}}"
+                                        FontFamily="{StaticResource NubankFontNormal}"
                                     />
                                 </StackLayout>
                             </Grid>

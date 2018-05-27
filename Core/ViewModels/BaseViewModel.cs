@@ -1,9 +1,10 @@
 ﻿using System;
 using Prism.Mvvm;
+using Prism.Navigation;
 
 namespace Core.ViewModels
 {
-    public class BaseViewModel : BindableBase
+    public class BaseViewModel : BindableBase, INavigationAware
     {
         private bool _isBusy;
         public bool IsBusy
@@ -17,6 +18,18 @@ namespace Core.ViewModels
         {
             get => _title;
             set => SetProperty(ref _title, value);
+        }
+
+        public virtual void OnNavigatedFrom(NavigationParameters parameters)
+        {
+        }
+
+        public virtual void OnNavigatedTo(NavigationParameters parameters)
+        {
+        }
+
+        public virtual void OnNavigatingTo(NavigationParameters parameters)
+        {
         }
     }
 }

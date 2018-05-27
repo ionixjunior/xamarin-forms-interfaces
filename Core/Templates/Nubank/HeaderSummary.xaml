@@ -21,6 +21,7 @@
                     HorizontalTextAlignment="Center"
                     VerticalOptions="CenterAndExpand"
                     Margin="50,0"
+                    FontFamily="{StaticResource NubankFontNormal}"
                 />
             </StackLayout>
 

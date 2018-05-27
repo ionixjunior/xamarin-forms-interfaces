@@ -7,13 +7,35 @@
     x:Class="Core.Views.NetflixHomeView"
     Title="{Binding Title}"
 >
-    <!--
-    IsGroupingEnabled="true"
-            GroupDisplayBinding="{Binding GroupName}"
-            HasUnevenRows="true"
-            CachingStrategy="RecycleElement"
-    -->
     <ContentPage.Content>
+        <controls:HorizontalViewNative 
+            ItemsSource="{Binding Movies}"
+            VerticalOptions="Start"
+            ItemHeight="100"
+            ItemWidth="100"
+        >
+            <controls:HorizontalViewNative.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView>
+                            <StackLayout 
+                                WidthRequest="100"
+                                HeightRequest="100"
+                            >
+                                <ffimageloading:CachedImage 
+                                    WidthRequest="100"
+                                    HeightRequest="100"
+                                    DownsampleToViewSize="true"
+                                    Source="{Binding Photo}"
+                                />
+                            </StackLayout>
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </controls:HorizontalViewNative.ItemTemplate>
+        </controls:HorizontalViewNative>
+        
+        <!--
         <Grid
             HorizontalOptions="FillAndExpand"
         >
@@ -50,5 +72,6 @@
                 </controls:HorizontalViewNative.ItemTemplate>
             </controls:HorizontalViewNative>
         </Grid>
+        -->
     </ContentPage.Content>
 </ContentPage>

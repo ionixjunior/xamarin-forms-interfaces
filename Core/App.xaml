@@ -6,6 +6,21 @@
     x:Class="Core.App"
 >
     <Application.Resources>
-        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!-- Nubank -->
+            <OnPlatform 
+                x:Key="NubankFontNormal" 
+                x:TypeArguments="x:String" 
+                Android="Gotham-Light.ttf#Gotham-Light" 
+                iOS="Gotham-Light" 
+            />
+
+            <OnPlatform 
+                x:Key="NubankFontBold" 
+                x:TypeArguments="x:String" 
+                Android="Gotham-Bold.ttf#Gotham-Bold" 
+                iOS="Gotham-Bold" 
+            />
+        </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

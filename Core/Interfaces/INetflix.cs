@@ -6,6 +6,6 @@ namespace Core.Interfaces
 {
     public interface INetflix
     {
-        IEnumerable<MovieModel> GetMovies();
+        IList<MovieModel> GetMovies();
     }
 }

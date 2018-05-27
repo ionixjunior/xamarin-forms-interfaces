@@ -7,7 +7,7 @@ namespace Core.Services
 {
     public class NetflixService : INetflix
     {
-        private List<MovieModel> _movies;
+        private IList<MovieModel> _movies;
 
         public NetflixService()
         {
@@ -75,7 +75,7 @@ namespace Core.Services
             };
         }
 
-        public IEnumerable<MovieModel> GetMovies()
+        public IList<MovieModel> GetMovies()
         {
             return _movies;
         }
