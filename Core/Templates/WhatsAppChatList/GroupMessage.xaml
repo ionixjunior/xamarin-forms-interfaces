@@ -5,8 +5,6 @@
     xmlns:controls="clr-namespace:Core.Controls"
     xmlns:effects="clr-namespace:Core.Effects"
     xmlns:converters="clr-namespace:Core.Converters"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     x:Class="Core.Templates.WhatsAppChatList.GroupMessage"
 >
     <ViewCell.View>
@@ -19,17 +17,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ffimageloading:CachedImage 
+            <controls:WhatsAppImage 
                 Grid.Column="0"
-                WidthRequest="60"
-                HeightRequest="60"
-                DownsampleToViewSize="true"
                 Source="{Binding Photo}"
-            >
-                <ffimageloading:CachedImage.Transformations>
-                    <fftransformations:CircleTransformation />
-                </ffimageloading:CachedImage.Transformations>
-            </ffimageloading:CachedImage>
+            />
 
             <StackLayout
                 Grid.Column="1"

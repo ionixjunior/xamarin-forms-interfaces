@@ -144,6 +144,7 @@
     <Compile Include="Templates\Nubank\HeaderInvoice.xaml.cs">
       <DependentUpon>HeaderInvoice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\WhatsAppImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
