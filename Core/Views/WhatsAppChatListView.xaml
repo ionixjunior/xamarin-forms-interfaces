@@ -12,6 +12,7 @@
             ItemsSource="{Binding Chats}"
             ItemTemplate="{templates:WhatsAppChatListTemplate}"
             HasUnevenRows="true"
+            SeparatorColor="#d5d5d5"
         />
     </ContentPage.Content>
 </ContentPage>

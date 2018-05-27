@@ -12,8 +12,12 @@ namespace Core.iOS.Renderers
     {
 		public override UITableViewCell GetCell(Cell item, UITableViewCell reusableCell, UITableView tv)
 		{
-            tv.SeparatorInset = new UIEdgeInsets(0, 90, 0, 0);
-            return base.GetCell(item, reusableCell, tv);
+            tv.SeparatorInset = new UIEdgeInsets(0, 80, 0, 0);
+
+            var cell = base.GetCell(item, reusableCell, tv);
+            cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
+
+            return cell;
 		}
 	}
 }

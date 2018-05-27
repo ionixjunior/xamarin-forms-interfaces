@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ViewCell 
+<controls:WhatsAppViewCell 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:controls="clr-namespace:Core.Controls"
@@ -45,10 +45,7 @@
                     />
                 </Grid>
 
-
-                
                 <Grid
-                    VerticalOptions="FillAndExpand"
                 >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -57,18 +54,11 @@
 
                     <StackLayout
                         Grid.Column="0"
-                        Orientation="Horizontal"
                         Spacing="0"
                     >
-                        <Image 
-                            Source="{Binding MessageIcon}"
-                            HeightRequest="18"
-                        />
-                        
                         <Label 
                             Text="{Binding Message}"
                             TextColor="Gray"
-                            VerticalOptions="CenterAndExpand"
                         >
                             <Label.Effects>
                                 <effects:TwoLinesLabelEffect />
@@ -79,21 +69,21 @@
                     <StackLayout
                         Grid.Column="1"
                         Orientation="Horizontal"
-                        VerticalOptions="Center"
                     >
                         <Image 
                             IsVisible="{Binding IsMuted}"
-                            Source="whatsapp_mute.png"
+                            Source="whatsapp_mute"
                             HeightRequest="20"
                         />
-
+                        
                         <controls:Badge 
-                            BoxColor="#2768ff"
                             Text="{Binding TotalUnread}"
+                            BoxColor="Blue"
+                            VerticalOptions="Center"
                         />
                     </StackLayout>
                 </Grid>
             </StackLayout>
         </Grid>
     </ViewCell.View>
-</ViewCell>
+</controls:WhatsAppViewCell>
