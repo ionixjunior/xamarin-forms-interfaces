@@ -34,6 +34,7 @@
                     <Label 
                         Grid.Column="0"
                         Text="{Binding SentFrom}"
+                        TextColor="Black"
                         FontAttributes="Bold"
                         LineBreakMode="TailTruncation"
                     />

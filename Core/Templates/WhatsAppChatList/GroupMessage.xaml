@@ -34,6 +34,7 @@
                     <Label 
                         Grid.Column="0"
                         Text="{Binding GroupName}"
+                        TextColor="Black"
                         FontAttributes="Bold"
                         LineBreakMode="TailTruncation"
                     />
@@ -58,6 +59,7 @@
                     >
                         <Label 
                             Text="{Binding SentFrom}"
+                            TextColor="Black"
                             LineBreakMode="TailTruncation"
                         />
 
