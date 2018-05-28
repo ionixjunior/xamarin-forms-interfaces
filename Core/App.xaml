@@ -7,6 +7,15 @@
 >
     <Application.Resources>
         <ResourceDictionary>
+            <!-- WhatsApp -->
+            <OnPlatform 
+                x:Key="WhatsAppUnreadColor"
+                x:TypeArguments="Color"
+                Android="#00dd57"
+                iOS="#0185ff"
+            />
+
+            
             <!-- Nubank -->
             <OnPlatform 
                 x:Key="NubankFontNormal" 

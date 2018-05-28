@@ -81,7 +81,7 @@
                         
                         <controls:Badge 
                             Text="{Binding TotalUnread}"
-                            BoxColor="Blue"
+                            BoxColor="{StaticResource WhatsAppUnreadColor}"
                             VerticalOptions="Center"
                         />
                     </StackLayout>
