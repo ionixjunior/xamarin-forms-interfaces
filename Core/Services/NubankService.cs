@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Core.Interfaces;
 using Core.Models;
 using Core.Models.Nubank;
+using Microcharts;
+using SkiaSharp;
 
 namespace Core.Services
 {
@@ -291,11 +293,55 @@ namespace Core.Services
             };
         }
 
+        private Entry GetEntry(float value)
+        {
+            var color = "#00c0cd";
+
+            return new Entry(value)
+            {
+                Color = SKColor.Parse(color),
+                TextColor = SKColor.Parse(color)
+            };
+        }
         private NubankHeaderModel GetHeader(
             string description)
         {
+            var entries = new[]
+            {
+                GetEntry(0),
+                GetEntry(50),
+                GetEntry(0),
+                GetEntry(15),
+                GetEntry(0),
+                GetEntry(15),
+                GetEntry(0),
+                GetEntry(70),
+                GetEntry(-20),
+                GetEntry(110),
+                GetEntry(10),
+                GetEntry(30),
+                GetEntry(15),
+                GetEntry(20),
+                GetEntry(110),
+                GetEntry(50),
+                GetEntry(20),
+                GetEntry(50),
+                GetEntry(5),
+                GetEntry(15)
+            };
+
+            var chart = new LineChart()
+            {
+                Entries = entries,
+                LineMode = LineMode.Straight,
+                PointMode = PointMode.None,
+                LineSize = 4,
+                BackgroundColor = SKColors.Transparent
+            };
+
             return new NubankHeaderSummaryModel()
             {
+                Chart = chart,
                 Description = description
             };
         }
