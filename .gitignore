@@ -42,3 +42,6 @@ Thumbs.db
 
 # MFractor
 .mfractor
+
+# Project
+Droid/Resources/Resource.designer.cs

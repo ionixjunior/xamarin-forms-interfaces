@@ -5,7 +5,6 @@
     xmlns:controls="clr-namespace:Core.Controls"
     xmlns:converters="clr-namespace:Core.Converters"
     xmlns:templates="clr-namespace:Core.Templates"
-    xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
     x:Class="Core.Views.NubankTimelineView"
 >
     <ContentPage.Content>
@@ -15,10 +14,11 @@
             SeparatorVisibility="None"
         >
             <controls:ListView.Header>
-                <cv:CarouselView 
+                <controls:CarouselView 
                     ItemsSource="{Binding Headers}"
                     ItemTemplate="{templates:NubankHeaderTemplate}"
                     HeightRequest="200"
+                    ShowIndicators="true"
                 />
             </controls:ListView.Header>
             
@@ -27,18 +27,16 @@
                     <ViewCell>
                         <ViewCell.View>
                             <Grid
-                                ColumnSpacing="20"
-                                Padding="15"
                                 BackgroundColor="{StaticResource NubankListViewItemBackgroundColor}"
+                                Padding="10,15"
+                                ColumnSpacing="20"
                             >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="40" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Grid
-                                    Grid.Column="0"
-                                >
+                                <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30" />
                                         <RowDefinition Height="*" />
@@ -47,18 +45,14 @@
                                     <Image 
                                         Grid.Row="0"
                                         Source="{Binding CategoryIcon}"
-                                        HeightRequest="30"
-                                        VerticalOptions="Start"
-                                        BackgroundColor="{StaticResource NubankListViewItemBackgroundColor}"
                                     />
 
                                     <BoxView 
                                         Grid.Row="1"
+                                        BackgroundColor="{StaticResource NubankTimelineColor}"
                                         WidthRequest="1"
-                                        Color="{StaticResource NubankTimelineColor}"
                                         HorizontalOptions="Center"
                                     />
-
                                 </Grid>
                                 
                                 <StackLayout
@@ -80,7 +74,6 @@
                                         <Label 
                                             Grid.Column="1"
                                             Text="{Binding CreatedAt, Converter={converters:NubankDateTimeConverter}}"
-                                            TextColor="Gray"
                                             FontFamily="{StaticResource NubankFontNormal}"
                                         />
                                     </Grid>
@@ -98,7 +91,7 @@
                                     />
 
                                     <Label 
-                                        IsVisible="{Binding IsDollarPrice}"
+                                        IsVisible="{Binding IsDollar}"
                                         Text="{Binding DollarPrice, StringFormat='{0:C2}', Converter={converters:NubankPriceToDollarConverter}}"
                                         TextColor="{Binding TextColor}"
                                         FontFamily="{StaticResource NubankFontNormal}"

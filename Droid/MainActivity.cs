@@ -12,6 +12,7 @@ using Prism.Ioc;
 using FFImageLoading.Forms.Droid;
 using FFImageLoading.Transformations;
 using System.Reflection;
+using CarouselView.FormsPlugin.Android;
 
 namespace Core.Droid
 {
@@ -27,8 +28,7 @@ namespace Core.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             CachedImageRenderer.Init(true);
-            var cv = typeof(Xamarin.Forms.CarouselView);
-            var assembly = Assembly.Load(cv.FullName);
+            CarouselViewRenderer.Init();
 
             var ignore = new CircleTransformation();
             LoadApplication(new App(new AndroidInitializer()));

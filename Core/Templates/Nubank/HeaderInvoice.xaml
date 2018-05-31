@@ -23,8 +23,8 @@
                     Text="{Binding Total, StringFormat='{0:C2}', Converter={converters:NubankPriceToLocalConverter}}"
                     HorizontalTextAlignment="Center"
                     Margin="50,0"
-                    FontSize="26"
                     FontFamily="{StaticResource NubankFontBold}"
+                    FontSize="26"
                     TextColor="{StaticResource NubankHighlightColor}"
                 />
 
@@ -32,6 +32,7 @@
                     Text="FATURA ABERTA"
                     TextColor="Gray"
                     HorizontalTextAlignment="Center"
+                    Margin="50,0"
                     FontFamily="{StaticResource NubankFontNormal}"
                     FontSize="12"
                 />

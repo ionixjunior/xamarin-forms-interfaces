@@ -20,11 +20,11 @@
             >
                 <controls:ChartView 
                     Chart="{Binding Chart}"
+                    HorizontalOptions="Center"
                     WidthRequest="120"
                     HeightRequest="60"
-                    HorizontalOptions="Center"
                 />
-                
+
                 <Label 
                     Text="{Binding Description}"
                     HorizontalTextAlignment="Center"
