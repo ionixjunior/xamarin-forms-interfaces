@@ -15,10 +15,10 @@
             SeparatorVisibility="None"
         >
             <controls:ListView.Header>
-                <cv:CarouselView
+                <cv:CarouselView 
                     ItemsSource="{Binding Headers}"
-                    HeightRequest="200"
                     ItemTemplate="{templates:NubankHeaderTemplate}"
+                    HeightRequest="200"
                 />
             </controls:ListView.Header>
             
@@ -27,42 +27,47 @@
                     <ViewCell>
                         <ViewCell.View>
                             <Grid
-                                ColumnSpacing="0"
-                                BackgroundColor="#f7f7f7"
+                                ColumnSpacing="20"
+                                Padding="15"
+                                BackgroundColor="{StaticResource NubankListViewItemBackgroundColor}"
                             >
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="60" />
+                                    <ColumnDefinition Width="40" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
                                 <Grid
                                     Grid.Column="0"
                                 >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Image 
+                                        Grid.Row="0"
+                                        Source="{Binding CategoryIcon}"
+                                        HeightRequest="30"
+                                        VerticalOptions="Start"
+                                        BackgroundColor="{StaticResource NubankListViewItemBackgroundColor}"
+                                    />
+
                                     <BoxView 
-                                        BackgroundColor="#808080"
+                                        Grid.Row="1"
                                         WidthRequest="1"
+                                        Color="{StaticResource NubankTimelineColor}"
                                         HorizontalOptions="Center"
                                     />
-                                    
-                                    <StackLayout>
-                                        <Image 
-                                            Source="{Binding CategoryIcon}"
-                                            HeightRequest="25"
-                                            VerticalOptions="Start"
-                                            BackgroundColor="White"
-                                            Margin="10"
-                                        />
-                                    </StackLayout>
-                                </Grid>
 
+                                </Grid>
+                                
                                 <StackLayout
                                     Grid.Column="1"
-                                    Margin="10"
                                 >
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
 
                                         <Label 
@@ -75,8 +80,7 @@
                                         <Label 
                                             Grid.Column="1"
                                             Text="{Binding CreatedAt, Converter={converters:NubankDateTimeConverter}}"
-                                            HorizontalTextAlignment="End"
-                                            FontSize="14"
+                                            TextColor="Gray"
                                             FontFamily="{StaticResource NubankFontNormal}"
                                         />
                                     </Grid>
@@ -88,14 +92,14 @@
                                     />
 
                                     <Label 
-                                        Text="{Binding LocalPrice, Converter={converters:NubankPriceToLocalConverter}}"
+                                        Text="{Binding LocalPrice, StringFormat='{0:C2}', Converter={converters:NubankPriceToLocalConverter}}"
                                         TextColor="{Binding TextColor}"
                                         FontFamily="{StaticResource NubankFontNormal}"
                                     />
 
                                     <Label 
-                                        IsVisible="{Binding IsDollar}"
-                                        Text="{Binding DollarPrice, Converter={converters:NubankPriceToDollarConverter}}"
+                                        IsVisible="{Binding IsDollarPrice}"
+                                        Text="{Binding DollarPrice, StringFormat='{0:C2}', Converter={converters:NubankPriceToDollarConverter}}"
                                         TextColor="{Binding TextColor}"
                                         FontFamily="{StaticResource NubankFontNormal}"
                                     />
@@ -103,12 +107,11 @@
                                     <Label 
                                         IsVisible="{Binding IsInstallment}"
                                         Text="{Binding NumberOfInstallments, StringFormat='em {0}x'}"
-                                        TextColor="{Binding TextColor}"
                                         FontFamily="{StaticResource NubankFontNormal}"
                                     />
 
                                     <Label 
-                                        Text="{Binding Tags, Converter={converters:NubankTagsToStringConverter}}}"
+                                        Text="{Binding Tags, Converter={converters:NubankTagsToStringConverter}}"
                                         FontFamily="{StaticResource NubankFontNormal}"
                                     />
                                 </StackLayout>

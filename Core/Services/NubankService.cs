@@ -244,11 +244,11 @@ namespace Core.Services
             ));
 
             _headers.Add(GetHeader(
-                description: "Você fez 51 compras nos últimos 30 dias, com um total de R$ 2.173,77"
+                description: "Você fez 51 compras nos últimos 30 dias, com um total de R$ 273,77"
             ));
 
             _headers.Add(GetHeader(
-                total: 2549.91
+                total: 249.91
             ));
         }
 

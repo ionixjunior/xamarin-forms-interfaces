@@ -14,56 +14,28 @@
                 <RowDefinition Height="1" />
             </Grid.RowDefinitions>
 
-
             <StackLayout
                 Grid.Row="0"
-                HorizontalOptions="Center"
                 VerticalOptions="Center"
             >
                 <controls:ChartView 
                     Chart="{Binding Chart}"
-                    HorizontalOptions="Center"
                     WidthRequest="120"
                     HeightRequest="60"
-                />
-                
-                <Label 
-                    Text="{Binding Description}"
-                    HorizontalTextAlignment="Center"
-                    FontFamily="{StaticResource NubankFontNormal}"
-                    Margin="50,0"
-                />
-            </StackLayout>
-            
-
-
-            
-            <!--
-            <StackLayout
-                Grid.Row="0"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-            >
-                <controls:ChartView 
-                    Grid.Row="0"
-                    Chart="{Binding Chart}"
                     HorizontalOptions="Center"
-                    WidthRequest="100"
                 />
                 
                 <Label 
-                    Grid.Row="1"
                     Text="{Binding Description}"
                     HorizontalTextAlignment="Center"
                     Margin="50,0"
                     FontFamily="{StaticResource NubankFontNormal}"
                 />
             </StackLayout>
-            -->
-
-            <BoxView
+            
+            <BoxView 
                 Grid.Row="1"
-                BackgroundColor="#d5d5d5"
+                BackgroundColor="{StaticResource NubankHeaderDividerColor}"
             />
         </Grid>
     </ContentView.Content>

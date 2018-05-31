@@ -2,10 +2,12 @@
 <ContentView 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:converters="clr-namespace:Core.Converters"
     x:Class="Core.Templates.Nubank.HeaderInvoice"
 >
     <ContentView.Content>
         <Grid
+            RowSpacing="0"
         >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -14,37 +16,35 @@
 
             <StackLayout
                 Grid.Row="0"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
             >
                 <Label 
-                    Text="{Binding Total, StringFormat='{0:C2}'}"
-                    TextColor="#00c0cd"
+                    Text="{Binding Total, StringFormat='{0:C2}', Converter={converters:NubankPriceToLocalConverter}}"
                     HorizontalTextAlignment="Center"
+                    Margin="50,0"
                     FontSize="26"
-                    FontFamily="{StaticResource NubankFontNormal}"
+                    FontFamily="{StaticResource NubankFontBold}"
+                    TextColor="{StaticResource NubankHighlightColor}"
                 />
 
                 <Label 
                     Text="FATURA ABERTA"
-                    TextColor="#d5d5d5"
+                    TextColor="Gray"
                     HorizontalTextAlignment="Center"
-                    FontSize="12"
                     FontFamily="{StaticResource NubankFontNormal}"
+                    FontSize="12"
                 />
 
-                <Button
+                <Button 
                     Text="GERAR BOLETO"
-                    TextColor="Black"
-                    BorderColor="#d5d5d5"
-                    BorderWidth="1"
-                    FontFamily="{StaticResource NubankFontNormal}"
+                    Style="{StaticResource NubankButton}"
                 />
             </StackLayout>
-
-            <BoxView
+            
+            <BoxView 
                 Grid.Row="1"
-                BackgroundColor="#d5d5d5"
+                BackgroundColor="{StaticResource NubankHeaderDividerColor}"
             />
         </Grid>
     </ContentView.Content>

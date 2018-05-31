@@ -30,6 +30,18 @@
                 Android="Gotham-Bold.ttf#Gotham-Bold" 
                 iOS="Gotham-Bold" 
             />
+
+            <Color x:Key="NubankListViewItemBackgroundColor">#f7f7f7</Color>
+            <Color x:Key="NubankTimelineColor">#808080</Color>
+            <Color x:Key="NubankHeaderDividerColor">#d5d5d5</Color>
+            <Color x:Key="NubankHighlightColor">#00c0cd</Color>
+
+            <Style x:Key="NubankButton" TargetType="Button">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderColor" Value="#d5d5d5" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="FontFamily" Value="{StaticResource NubankFontNormal}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>
