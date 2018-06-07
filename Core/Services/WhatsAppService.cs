@@ -71,7 +71,7 @@ namespace Core.Services
             ));
 
             _chats.Add(GetChat(
-                photo: "http://br.lookbook.blog/wp-content/uploads/sites/3/2017/05/www.depoisdosquinze.comRochelle-150x150-0d003ba0a3e2aafc033832bea11fa06cefaac4cb.jpg",
+                photo: "http://rederecord.r7.com/wp-content/blogs.dir/21/files/veja-as-caras-e-bocas-que-so-a-rochelle-consegue-fazer/9.jpg",
                 groupName: null,
                 sentFrom: "Rochelle",
                 createdAt: DateTimeOffset.Now.AddDays(-5),

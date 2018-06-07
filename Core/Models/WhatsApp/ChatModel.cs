@@ -1,5 +1,4 @@
 ﻿using System;
-using Core.Externsions;
 
 namespace Core.Models.WhatsApp
 {
@@ -12,7 +11,5 @@ namespace Core.Models.WhatsApp
         public string MessageIcon { get; set; }
         public bool IsMuted { get; set; }
         public int TotalUnread { get; set; }
-
-        public string CreatedAtText => CreatedAt.ToWhatsApp();
     }
 }

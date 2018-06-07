@@ -21,13 +21,13 @@ namespace Core.Services
             ));
 
             _apps.Add(GetMobileApp(
-                typeof(WhatsAppInfoView).Name,
-                "WhatsApp - Info"
+                typeof(NubankTimelineView).Name,
+                "Nubank - Timeline"
             ));
 
             _apps.Add(GetMobileApp(
-                typeof(NubankTimelineView).Name,
-                "Nubank - Timeline"
+                typeof(WhatsAppInfoView).Name,
+                "WhatsApp - Info"
             ));
 
             _apps.Add(GetMobileApp(
