@@ -191,6 +191,18 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_bullet_green.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_bullet_red.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_card.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_eletronics.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_play.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_recreation.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_restaurant.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_services.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_star.png" />
+    <AndroidResource Include="Resources\drawable\nubank_cat_transport.png" />
+    <AndroidResource Include="Resources\drawable\whatsapp_mute.png" />
+    <AndroidResource Include="Resources\drawable\whatsapp_read.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
