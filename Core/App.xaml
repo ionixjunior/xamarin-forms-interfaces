@@ -42,6 +42,11 @@
                 <Setter Property="BorderWidth" Value="1" />
                 <Setter Property="FontFamily" Value="{StaticResource NubankFontNormal}" />
             </Style>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarTextColor" Value="Black" />
+                <Setter Property="BarBackgroundColor" Value="White" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>
