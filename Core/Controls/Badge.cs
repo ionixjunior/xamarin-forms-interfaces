@@ -6,7 +6,7 @@ namespace Core.Controls
     public class Badge : AbsoluteLayout
     {
         protected Label Label;
-        protected CircleBox Box;
+        protected BoxView Box;
 
         public static readonly BindableProperty TextProperty =
             BindableProperty.Create(
@@ -35,7 +35,7 @@ namespace Core.Controls
             WidthRequest = size;
 
             // Box
-            Box = new CircleBox
+            Box = new BoxView
             {
                 CornerRadius = HeightRequest / 2
             };

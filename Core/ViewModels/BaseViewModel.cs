@@ -4,7 +4,7 @@ using Prism.Navigation;
 
 namespace Core.ViewModels
 {
-    public class BaseViewModel : BindableBase, INavigationAware
+    public class BaseViewModel : BindableBase, INavigatedAware, INavigatingAware
     {
         private bool _isBusy;
         public bool IsBusy
@@ -20,15 +20,15 @@ namespace Core.ViewModels
             set => SetProperty(ref _title, value);
         }
 
-        public virtual void OnNavigatedFrom(NavigationParameters parameters)
+        public virtual void OnNavigatedFrom(INavigationParameters parameters)
         {
         }
 
-        public virtual void OnNavigatedTo(NavigationParameters parameters)
+        public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
         }
 
-        public virtual void OnNavigatingTo(NavigationParameters parameters)
+        public virtual void OnNavigatingTo(INavigationParameters parameters)
         {
         }
     }

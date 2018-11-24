@@ -33,7 +33,7 @@ namespace Core.ViewModels
             //);
         }
 
-		public override void OnNavigatingTo(NavigationParameters parameters)
+		public override void OnNavigatingTo(INavigationParameters parameters)
 		{
             base.OnNavigatingTo(parameters);
             Movies = _netflix.GetMovies();

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using CarouselView.FormsPlugin.iOS;
-using FFImageLoading.Forms.Touch;
 using FFImageLoading.Transformations;
 using Foundation;
 using Prism;
@@ -18,7 +17,7 @@ namespace Core.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            CachedImageRenderer.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             CarouselViewRenderer.Init();
 
             var ignore = new CircleTransformation();

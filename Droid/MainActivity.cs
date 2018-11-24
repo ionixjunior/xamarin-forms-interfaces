@@ -9,7 +9,6 @@ using Android.Widget;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
-using FFImageLoading.Forms.Droid;
 using FFImageLoading.Transformations;
 using System.Reflection;
 using CarouselView.FormsPlugin.Android;
@@ -27,7 +26,7 @@ namespace Core.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            CachedImageRenderer.Init(true);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             CarouselViewRenderer.Init();
 
             var ignore = new CircleTransformation();
