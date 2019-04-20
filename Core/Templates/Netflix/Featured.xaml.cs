@@ -8,6 +8,7 @@ namespace Core.Templates.Netflix
 		{
 			InitializeComponent();
 			featuredPhoto.WidthRequest = Application.Current.MainPage.Width;
+            shadow.WidthRequest = Application.Current.MainPage.Width;
 		}
 	}
 }

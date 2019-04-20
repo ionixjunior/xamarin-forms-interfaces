@@ -217,6 +217,8 @@
     <AndroidResource Include="Resources\drawable\netflix_play.png" />
     <AndroidResource Include="Resources\drawable\netflix_info.png" />
     <AndroidResource Include="Resources\drawable\netflix_plus.png" />
+    <AndroidResource Include="Resources\drawable\netflix_shadow.png" />
+    <AndroidResource Include="Resources\drawable\netflix.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

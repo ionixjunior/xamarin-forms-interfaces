@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="Core.Templates.Netflix.Playable"
+>
+    <ContentView.Content>
+        <Grid
+            RowSpacing="0"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            
+            <ffimageloading:CachedImage 
+                Grid.Row="0"
+                x:Name="playablePhoto"
+                Source="{Binding Photo}"
+                HeightRequest="{Binding Height}"
+            />
+            
+            <Grid
+                Grid.Row="1"
+                ColumnSpacing="10"
+                Margin="10, 10, 10, 0"
+            >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Button 
+                    Grid.Column="0"
+                    Text="Play"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Image="netflix_play.png"
+                    HeightRequest="35"
+                    CornerRadius="0"
+                    VerticalOptions="Start"
+                />
+                
+                <Button 
+                    Grid.Column="1"
+                    Text="My List"
+                    BackgroundColor="#565758"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Image="netflix_plus.png"
+                    HeightRequest="35"
+                    CornerRadius="0"
+                    VerticalOptions="Start"
+                />
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

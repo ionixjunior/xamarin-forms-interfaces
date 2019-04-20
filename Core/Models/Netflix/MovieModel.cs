@@ -9,7 +9,7 @@ namespace Core.Models.Netflix
         public string Photo { get; set; }
         public string Category { get; set; }
 		public double Height { get; set; }
-		public NetflixMovieType Type { get; set; }
+		public NetflixCoverType Type { get; set; }
 	}
 
     public class GroupMovieModel : List<MovieModel>

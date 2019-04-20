@@ -5,22 +5,59 @@
     xmlns:controls="clr-namespace:Core.Controls"
     xmlns:templates="clr-namespace:Core.Templates"
     x:Class="Core.Views.NetflixHomeView"
-    Title="{Binding Title}"
+    BackgroundColor="Black"
 >
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="StackLayout">
-                <Setter Property="BackgroundColor" Value="#000000" />
-            </Style>
-            
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#ffffff" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     
+    <NavigationPage.TitleView>
+        <Grid
+            VerticalOptions="Center"
+        >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Image 
+                Grid.Column="0"
+                Source="netflix.png"
+                VerticalOptions="Center"
+                WidthRequest="35"
+            />
+            
+            <Label 
+                Grid.Column="1"
+                Text="TV Shows"
+                VerticalOptions="Center"
+            />
+            
+            <Label 
+                Grid.Column="2"
+                Text="Movies"
+                VerticalOptions="Center"
+            />
+            
+            <Label 
+                Grid.Column="3"
+                Text="My List"
+                VerticalOptions="Center"
+            />
+        </Grid>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView
+            x:Name="scroll"
+            Scrolled="AfterScroll"
+        >
             <StackLayout
                 BindableLayout.ItemsSource="{Binding Movies}"
             >
@@ -31,7 +68,7 @@
                             <Label 
                                 Text="{Binding GroupName}"
                                 FontAttributes="Bold"
-                                Margin="5,0"
+                                Margin="5,15,5,0"
                             />
                             
                             <CollectionView

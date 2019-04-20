@@ -14,6 +14,12 @@
                 Margin="5,0"
             />
             
+            <Image 
+                x:Name="shadow"
+                Source="netflix_shadow.png"
+                VerticalOptions="End"
+            />
+            
             <Grid
                 VerticalOptions="End"
                 HeightRequest="50"
