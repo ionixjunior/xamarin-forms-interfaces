@@ -12,8 +12,8 @@ namespace Core.ViewModels
     {
         private readonly INetflix _netflix;
 
-        private IList<MovieModel> _movies;
-        public IList<MovieModel> Movies
+        private IList<GroupMovieModel> _movies;
+        public IList<GroupMovieModel> Movies
         {
             get { return _movies; }
             set
@@ -27,16 +27,7 @@ namespace Core.ViewModels
         {
             Title = "Netflix";
             _netflix = netflix;
-
-            //Movies = new ObservableCollection<MovieModel>(
-            //    netflix.GetMovies()
-            //);
+            Movies = _netflix.GetMovies().GroupByCategory();
         }
-
-		public override void OnNavigatingTo(INavigationParameters parameters)
-		{
-            base.OnNavigatingTo(parameters);
-            Movies = _netflix.GetMovies();
-		}
 	}
 }

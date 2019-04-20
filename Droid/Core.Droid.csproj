@@ -214,6 +214,9 @@
     <AndroidResource Include="Resources\drawable\nubank_cat_transport.png" />
     <AndroidResource Include="Resources\drawable\whatsapp_mute.png" />
     <AndroidResource Include="Resources\drawable\whatsapp_read.png" />
+    <AndroidResource Include="Resources\drawable\netflix_play.png" />
+    <AndroidResource Include="Resources\drawable\netflix_info.png" />
+    <AndroidResource Include="Resources\drawable\netflix_plus.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

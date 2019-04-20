@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="Core.Templates.Netflix.Featured"
+>
+    <ContentView.Content>
+        <Grid>
+            <ffimageloading:CachedImage 
+                x:Name="featuredPhoto"
+                Source="{Binding Photo}"
+                HeightRequest="{Binding Height}"
+                Margin="5,0"
+            />
+            
+            <Grid
+                VerticalOptions="End"
+                HeightRequest="50"
+                Padding="0, 20"
+            >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <StackLayout
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent"
+                >
+                    <Image 
+                        Source="netflix_plus.png"
+                    />
+                    
+                    <Label 
+                        Text="My List"
+                        FontSize="12"
+                        TextColor="Gray"
+                    />
+                </StackLayout>
+                
+                <Button 
+                    Grid.Column="1"
+                    Text="Play"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Image="netflix_play.png"
+                    HeightRequest="35"
+                    CornerRadius="0"
+                    VerticalOptions="Start"
+                />
+                
+                <StackLayout
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent"
+                >
+                    <Image 
+                        Source="netflix_info.png"
+                    />
+                    
+                    <Label 
+                        Text="Info"
+                        FontSize="12"
+                        TextColor="Gray"
+                    />
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

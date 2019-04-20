@@ -3,75 +3,82 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:controls="clr-namespace:Core.Controls"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:templates="clr-namespace:Core.Templates"
     x:Class="Core.Views.NetflixHomeView"
     Title="{Binding Title}"
 >
-    <ContentPage.Content>
-        <controls:HorizontalViewNative 
-            ItemsSource="{Binding Movies}"
-            VerticalOptions="Start"
-            ItemHeight="100"
-            ItemWidth="100"
-        >
-            <controls:HorizontalViewNative.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ContentView>
-                            <StackLayout 
-                                WidthRequest="100"
-                                HeightRequest="100"
-                            >
-                                <ffimageloading:CachedImage 
-                                    WidthRequest="100"
-                                    HeightRequest="100"
-                                    DownsampleToViewSize="true"
-                                    Source="{Binding Photo}"
-                                />
-                            </StackLayout>
-                        </ContentView>
-                    </ViewCell>
-                </DataTemplate>
-            </controls:HorizontalViewNative.ItemTemplate>
-        </controls:HorizontalViewNative>
-        
-        <!--
-        <Grid
-            HorizontalOptions="FillAndExpand"
-        >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#000000" />
+            </Style>
             
-
-            <controls:HorizontalViewNative 
-                ItemsSource="{Binding Movies}"
-                VerticalOptions="Start"
-                ItemWidth="100"
-                ItemHeight="100"
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#ffffff" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding Movies}"
             >
-                <controls:HorizontalViewNative.ItemTemplate>
+                <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <ContentView>
-                                <StackLayout
-                                    WidthRequest="100"
-                                    HeightRequest="100"
-                                >
-                                    <ffimageloading:CachedImage 
-                                        WidthRequest="100"
-                                        HeightRequest="100"
-                                        DownsampleToViewSize="true"
-                                        Source="{Binding Photo}"
-                                    />
-
-                                </StackLayout>
-                            </ContentView>
-                        </ViewCell>
+                        <StackLayout
+                        >
+                            <Label 
+                                Text="{Binding GroupName}"
+                                FontAttributes="Bold"
+                                Margin="5,0"
+                            />
+                            
+                            <CollectionView
+                                ItemsSource="{Binding .}"
+                                ItemsLayout="{x:Static ListItemsLayout.HorizontalList}"
+                                ItemSizingStrategy="MeasureFirstItem"
+                                HeightRequest="{Binding Height}"
+                                ItemTemplate="{templates:NetflixTemplate}"
+                            >
+                                <!--
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout
+                                        >
+                                            <ffimageloading:CachedImage 
+                                                Source="{Binding Photo}"
+                                                HeightRequest="{Binding Height}"
+                                                Margin="5,0"
+                                            />
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                                -->
+                            </CollectionView>
+                        </StackLayout>
                     </DataTemplate>
-                </controls:HorizontalViewNative.ItemTemplate>
-            </controls:HorizontalViewNative>
-        </Grid>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+        <!--
+        <CollectionView
+            ItemsSource="{Binding Movies}"
+            ItemsLayout="{x:Static ListItemsLayout.HorizontalList}"
+        >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <ffimageloading:CachedImage 
+                            Source="{Binding Photo}"
+                            WidthRequest="100"
+                            HeightRequest="100"
+                            DownsampleToViewSize="true"
+                        />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         -->
     </ContentPage.Content>
 </ContentPage>
