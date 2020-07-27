@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<TabbedPage
+    x:Class="Core.Views.TwitchHomeView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <NavigationPage.TitleView>
+        <FlexLayout AlignItems="Center">
+            <Label FlexLayout.Grow="1" Text="Avatar" />
+            <Label Margin="10" Text="Sino" />
+            <Label Margin="10" Text="Chat" />
+            <Label Margin="10" Text="Busca" />
+        </FlexLayout>
+    </NavigationPage.TitleView>
+
+    <TabbedPage.Children>
+        <ContentPage Title="Following">
+            <ContentPage.Content>
+                <AbsoluteLayout>
+                    <CollectionView IsGrouped="true" ItemsSource="{Binding Channels}">
+                        <CollectionView.Header>
+                            <Label
+                                Padding="15,0"
+                                FontAttributes="Bold"
+                                FontSize="Title"
+                                Text="Following" />
+                        </CollectionView.Header>
+
+                        <CollectionView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <Label Padding="15,15,15,0" Text="{Binding GroupName}" />
+                            </DataTemplate>
+                        </CollectionView.GroupHeaderTemplate>
+
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="15,0" ColumnDefinitions="140,*">
+                                    <Grid Grid.Column="0" VerticalOptions="Start">
+                                        <Image
+                                            Aspect="AspectFill"
+                                            HeightRequest="70"
+                                            Source="twitch_thumbnail" />
+                                        <StackLayout
+                                            HorizontalOptions="Start"
+                                            Orientation="Horizontal"
+                                            Spacing="0"
+                                            VerticalOptions="End">
+                                            <Ellipse
+                                                Margin="6"
+                                                Fill="Red"
+                                                HeightRequest="16"
+                                                WidthRequest="16" />
+
+                                            <Label
+                                                Text="{Binding TotalWatching}"
+                                                TextColor="White"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                    </Grid>
+
+                                    <StackLayout Grid.Column="1" Spacing="0">
+                                        <Label Text="{Binding Name}" />
+                                        <Label LineBreakMode="TailTruncation" Text="{Binding Description}" />
+                                        <Label Text="{Binding Category}" />
+
+                                        <ScrollView
+                                            Margin="0,10,0,0"
+                                            HorizontalScrollBarVisibility="Never"
+                                            Orientation="Horizontal">
+                                            <FlexLayout BindableLayout.ItemsSource="{Binding Tags}">
+                                                <BindableLayout.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Frame
+                                                            Margin="5,0"
+                                                            Padding="5"
+                                                            BackgroundColor="Gray"
+                                                            CornerRadius="12"
+                                                            HasShadow="false">
+                                                            <Label
+                                                                FontSize="Small"
+                                                                Text="{Binding .}"
+                                                                TextColor="White" />
+                                                        </Frame>
+                                                    </DataTemplate>
+                                                </BindableLayout.ItemTemplate>
+                                            </FlexLayout>
+                                        </ScrollView>
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Frame
+                        x:Name="Video"
+                        Margin="20"
+                        Padding="0"
+                        BackgroundColor="Red"
+                        CornerRadius="10"
+                        HasShadow="false"
+                        HeightRequest="140"
+                        WidthRequest="220">
+                        <Frame.GestureRecognizers>
+                            <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
+                        </Frame.GestureRecognizers>
+
+                        <Grid>
+                            <MediaElement AutoPlay="true" Source="https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4" />
+                            <BoxView />
+                        </Grid>
+                    </Frame>
+                </AbsoluteLayout>
+            </ContentPage.Content>
+        </ContentPage>
+
+        <ContentPage Title="Discover">
+            <ContentPage.Content>
+                <Label Text="Discover page" />
+            </ContentPage.Content>
+        </ContentPage>
+
+        <ContentPage Title="Browser">
+            <ContentPage.Content>
+                <Label Text="Browser page" />
+            </ContentPage.Content>
+        </ContentPage>
+
+        <ContentPage Title="Esports">
+            <ContentPage.Content>
+                <Label Text="Esports page" />
+            </ContentPage.Content>
+        </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>

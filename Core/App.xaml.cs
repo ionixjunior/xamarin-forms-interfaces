@@ -18,6 +18,8 @@ namespace Core
 		{
             InitializeComponent();
 
+            Device.SetFlags(new string[] { "MediaElement_Experimental", "Shapes_Experimental" });
+
             await NavigationService.NavigateAsync("NavigationPage/MobileAppView");
 		}
 
@@ -29,12 +31,14 @@ namespace Core
             containerRegistry.RegisterForNavigation<WhatsAppInfoView, WhatsAppInfoViewModel>();
             containerRegistry.RegisterForNavigation<NubankTimelineView, NubankTimelineViewModel>();
             containerRegistry.RegisterForNavigation<NetflixHomeView, NetflixHomeViewModel>();
+            containerRegistry.RegisterForNavigation<TwitchHomeView, TwitchHomeViewModel>();
 
             containerRegistry.RegisterSingleton<IMobileApp, MobileAppService>();
             containerRegistry.RegisterSingleton<IWhatsApp, WhatsAppService>();
             containerRegistry.RegisterSingleton<INubank, NubankService>();
             containerRegistry.RegisterSingleton<INetflix, NetflixService>();
-		}
+            containerRegistry.RegisterSingleton<ITwitch, TwitchService>();
+        }
 
 		protected override void OnStart()
         {

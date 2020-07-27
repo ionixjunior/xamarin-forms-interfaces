@@ -33,7 +33,7 @@ namespace Core.ViewModels
 
         private async Task SelectItem(MobileAppModel mobileAppModel)
         {
-            await _navigation.NavigateAsync(mobileAppModel.ViewName);
+            await _navigation.NavigateAsync(mobileAppModel.ViewName, useModalNavigation: mobileAppModel.UseModalNavigation);
         }
     }
 }

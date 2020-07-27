@@ -17,33 +17,45 @@ namespace Core.Services
 
             _apps.Add(GetMobileApp(
                 typeof(WhatsAppChatListView).Name,
-                "WhatsApp - Lista chats"
+                "WhatsApp - Lista chats",
+                false
             ));
 
             _apps.Add(GetMobileApp(
                 typeof(NubankTimelineView).Name,
-                "Nubank - Timeline"
+                "Nubank - Timeline",
+                false
             ));
 
             _apps.Add(GetMobileApp(
                 typeof(WhatsAppInfoView).Name,
-                "WhatsApp - Info"
+                "WhatsApp - Info",
+                false
             ));
 
             _apps.Add(GetMobileApp(
                 typeof(NetflixHomeView).Name,
-                "Netflix - Home"
+                "Netflix - Home",
+                false
+            ));
+
+            _apps.Add(GetMobileApp(
+                $"NavigationPage/{typeof(TwitchHomeView).Name}",
+                "Twitch - Home",
+                true
             ));
         }
 
         private MobileAppModel GetMobileApp(
             string viewName,
-            string name)
+            string name,
+            bool useModalNavigation)
         {
             return new MobileAppModel()
             {
                 ViewName = viewName,
-                Name = name
+                Name = name,
+                UseModalNavigation = useModalNavigation
             };
         }
 
