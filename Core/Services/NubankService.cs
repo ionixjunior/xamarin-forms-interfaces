@@ -293,11 +293,11 @@ namespace Core.Services
             };
         }
 
-        private Entry GetEntry(float value)
+        private ChartEntry GetEntry(float value)
         {
             var color = "#00c0cd";
 
-            return new Entry(value)
+            return new ChartEntry(value)
             {
                 Color = SKColor.Parse(color),
                 TextColor = SKColor.Parse(color)
