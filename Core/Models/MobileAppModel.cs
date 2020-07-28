@@ -6,5 +6,6 @@ namespace Core.Models
     {
         public string ViewName { get; set; }
         public string Name { get; set; }
+        public bool UseModalNavigation { get; set; }
     }
 }
