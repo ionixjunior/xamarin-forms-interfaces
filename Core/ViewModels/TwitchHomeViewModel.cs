@@ -11,7 +11,7 @@ namespace Core.ViewModels
     public class TwitchHomeViewModel : BaseViewModel, IInitialize
     {
         private readonly ITwitch _twitch;
-        public ObservableCollection<TwitchChannelModel> Channels { get; private set; }
+        public ObservableCollection<GroupTwitchChannelModel> Channels { get; private set; }
         public ICommand LoadDataCommand { get; private set; }
 
         private bool _isRefreshing;
@@ -24,7 +24,7 @@ namespace Core.ViewModels
         public TwitchHomeViewModel(ITwitch twitch)
         {
             _twitch = twitch;
-            Channels = new ObservableCollection<TwitchChannelModel>();
+            Channels = new ObservableCollection<GroupTwitchChannelModel>();
             LoadDataCommand = new DelegateCommand(LoadData);
         }
 
@@ -33,7 +33,7 @@ namespace Core.ViewModels
             IsRefreshing = true;
             Channels.Clear();
 
-            foreach (var channel in _twitch.GetChannels())
+            foreach (var channel in _twitch.GetGroupedChannels())
                 Channels.Add(channel);
             IsRefreshing = false;
         }
