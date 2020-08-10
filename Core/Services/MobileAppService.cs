@@ -44,6 +44,12 @@ namespace Core.Services
                 "Twitch - Home",
                 true
             ));
+
+            _apps.Add(GetMobileApp(
+                typeof(FacebookLoginView).Name,
+                "Facebook Login",
+                false
+            ));
         }
 
         private MobileAppModel GetMobileApp(
