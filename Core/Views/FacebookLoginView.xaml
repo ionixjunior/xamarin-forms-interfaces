@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Core.Views.FacebookLoginView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <FlexLayout AlignItems="Center" Direction="Column">
+            <FlexLayout
+                x:Name="ProfileContainer"
+                AlignItems="Center"
+                Direction="Column"
+                FlexLayout.Grow="1"
+                JustifyContent="Center">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Red"
+                    CornerRadius="10"
+                    HasShadow="false"
+                    HeightRequest="100"
+                    HorizontalOptions="Center"
+                    IsClippedToBounds="true"
+                    VerticalOptions="Center"
+                    WidthRequest="100">
+                    <Image Source="https://avatars0.githubusercontent.com/u/519642?s=460">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Label
+                    x:Name="Name"
+                    HorizontalTextAlignment="Center"
+                    Text="Ione" />
+
+            </FlexLayout>
+
+            <FlexLayout
+                x:Name="FieldContainer"
+                AlignItems="Center"
+                Direction="Column"
+                FlexLayout.Grow="1"
+                IsVisible="false"
+                JustifyContent="Center">
+
+                <Label HorizontalTextAlignment="Center" Text="Enter your password." />
+                <Entry
+                    Margin="20,20,20,0"
+                    FlexLayout.AlignSelf="Stretch"
+                    HeightRequest="44"
+                    Placeholder="Password" />
+                <Button
+                    Margin="20,10,20,0"
+                    BackgroundColor="#1878F1"
+                    FlexLayout.AlignSelf="Stretch"
+                    Text="Log In"
+                    TextColor="White" />
+            </FlexLayout>
+
+            <FlexLayout
+                AlignItems="Center"
+                Direction="Column"
+                FlexLayout.Basis="140">
+                <Label
+                    Margin="10"
+                    Text="ícone"
+                    TextColor="#1878F1" />
+                <Label
+                    Margin="10"
+                    Text="Log Into Another Account"
+                    TextColor="#1878F1" />
+                <Label
+                    Margin="10"
+                    Text="Sign Up for Facebook"
+                    TextColor="#1878F1" />
+
+            </FlexLayout>
+        </FlexLayout>
+
+    </ContentPage.Content>
+</ContentPage>

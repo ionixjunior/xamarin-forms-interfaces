@@ -32,6 +32,7 @@ namespace Core
             containerRegistry.RegisterForNavigation<NubankTimelineView, NubankTimelineViewModel>();
             containerRegistry.RegisterForNavigation<NetflixHomeView, NetflixHomeViewModel>();
             containerRegistry.RegisterForNavigation<TwitchHomeView, TwitchHomeViewModel>();
+            containerRegistry.RegisterForNavigation<FacebookLoginView>();
 
             containerRegistry.RegisterSingleton<IMobileApp, MobileAppService>();
             containerRegistry.RegisterSingleton<IWhatsApp, WhatsAppService>();
